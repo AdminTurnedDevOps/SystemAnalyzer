@@ -4,8 +4,8 @@ Foreach ($disk in $DiskDrive) {
     $DiskDriveOBJECT = [pscustomobject] @{
         'DiskSize'       = $Disk.Size / 1GB
         'FreeDiskSpace'  = $FreeDiskSpace.FreeSpace / 1GB
-        'DiskPartitions' = $DiskDrive.partitions
-        'DiskModel'      = $DiskDrive.Model
+        'DiskPartitions' = $Disk.partitions
+        'DiskModel'      = $Disk.Model
     }
     $DiskDriveOBJECT
 }#Foreach
