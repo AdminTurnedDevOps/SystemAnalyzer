@@ -9,4 +9,4 @@ Function CPUTracker {
         Write-Host -ForegroundColor Green 'Below are your CPU results'
         $CPULOADobject
     }#Foreach
-}
+}#Function
