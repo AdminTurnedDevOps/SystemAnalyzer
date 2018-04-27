@@ -1,3 +1,5 @@
+import nix as bash
+
 """
     The "Scanner" logic will go here
 
@@ -32,14 +34,16 @@
                       ▄█▄░░░░░░░░░░░▀▄░░▀▀▀▀▀▀▀▀░░▄▀
                      █▀▀█████████▀▀▀▀████████████▀
                      ████▀  ███▀      ▀███  ▀██▀
-    
+
 """
 
-import platform 
+import platform
 def main():
     opSys1 = platform.system()
     if opSys1 == 'Darwin':
-        print("You're on a mac")
+        print("You're on a Mac")
+        print("_______________")
+        bash.bash()
     elif opSys1 == 'Windows':
         print("You're on a window")
     elif opSys1 == 'Linux' or opSys1 == 'Linux2':
