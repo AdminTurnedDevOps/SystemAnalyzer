@@ -31,10 +31,11 @@ import nix as bash
 import platform
 def main():
     opSys1 = platform.system()
-    if opSys1 == 'Darwin':
-        print("You're on a Mac")
-        print("_______________")
-        bash.bash()
+    # Bash commands will have mixed results on OS X. Commenting out for now.
+    # if opSys1 == 'Darwin':
+    #     print("You're on a Mac")
+    #     print("_______________")
+    #     bash.bash()
     elif opSys1 == 'Windows':
         print("You're on a window")
     elif opSys1 == 'Linux' or opSys1 == 'Linux2':
