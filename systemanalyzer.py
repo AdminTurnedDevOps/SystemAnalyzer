@@ -48,4 +48,6 @@ def main():
         print("You're on a window")
     elif opSys1 == 'Linux' or opSys1 == 'Linux2':
         print("You're on a linux machine")
+        print("_________________________")
+        bash.bash()
 main()
