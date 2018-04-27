@@ -1,4 +1,5 @@
 import nix as bash
+import powershell as posh
 
 """
     The "Scanner" logic will go here
@@ -45,7 +46,8 @@ def main():
         print("_______________")
         bash.bash()
     elif opSys1 == 'Windows':
-        print("You're on a window")
+        print("You're on a windows machine")
+        posh.powershell()
     elif opSys1 == 'Linux' or opSys1 == 'Linux2':
         print("You're on a linux machine")
         print("_________________________")
