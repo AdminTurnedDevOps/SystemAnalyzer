@@ -1,5 +1,3 @@
-$Process = Get-Process
-$MemoryUsage = $Process | select product,@{Name='VM' ;expression={[math]::Round($_.VM / 1mb)}},@{Name='PeakVirtualMemorySize' ;expression={[math]::Round($_.PeakVirtualMemorySize / 1mb)}},
-@{Name='VirtualMemorySize64' ;expression={[math]::Round($_.VirtualMemorySize64 / 1mb)}} | Where {$_.Product -like "*Visual Studio*"}
-
-$MemoryUsage[0]
+$Mem = Get-Ciminstance Win32_OperatingSystem | Select @{Name='FreeRAM' ;expression={[math]::Round($_.FreePhysicalMemory / 1MB)}},
+                                                      @{Name='MaxRAMSize' ;expression={[math]::Round($_.MaxProcessMemorySize / 1GB)}}
+$Mem
