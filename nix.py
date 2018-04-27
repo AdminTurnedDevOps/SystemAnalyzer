@@ -2,13 +2,20 @@
 import subprocess as s
 
 
-def bash():
-    # Bar
+def disk():
     print("Disk Usage")
     print("_________________________")
     disk = s.run(["df", "-h"])
-    print()
-    print()
+
+
+def mem():
     print("RAM")
     print("_________________________")
     mem = s.run(["free", "-h"])
+
+
+
+def bash():
+    disk()
+    print()
+    mem()
