@@ -5,7 +5,7 @@ Function Get-DiskStats {
         [string]$EnterComputerName = (Read-host 'Please enter a computername')
     )
     Begin {
-        if ($EnterComputerNme -notmatch '\w+') {
+        if ($EnterComputerName -notmatch '\w+') {
             $EnterComputerName = $env:computername
         }#if
     }#Begin
