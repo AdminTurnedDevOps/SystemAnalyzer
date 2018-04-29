@@ -1,12 +1,9 @@
 Function Get-DiskStats {
-    [cmdletbindng(ConfirmImpact = 'low')]
-    Param (
-        [Parameter(Mandatory = $true)]
-        [string]$EnterComputerName = (Read-host 'Please enter a computername')
-    )
+
     Begin {
-        if ($EnterComputerNme -notmatch '\w+') {
-            $EnterComputerName = $env:computername
+        [string]$ComputerName = Read-host 'Please enter a computername'
+        if ($ComputerName -notmatch "\w+") {
+            $ComputerName = $ENV:Computername
         }#if
     }#Begin
 
@@ -14,14 +11,16 @@ Function Get-DiskStats {
         Try {
             $FreeDiskSpace = Get-CimInstance -ClassName Win32_LogicalDisk
             $DiskDrive = Get-CimInstance -ClassName Win32_DiskDrive
+
             Foreach ($disk in $DiskDrive) {
+
                 $DiskDriveOBJECT = [pscustomobject] @{
                     'DiskSize'       = $Disk.Size / 1GB
-                    'FreeDiskSpace'  = $FreeDiskSpace.FreeSpace / 1GB
-                    'DiskPartitions' = $Disk.partitions
+                    'FreeDiskSpace'  = $FreeDiskSpace | Select C:,D:,E:,F:,@{Name='FreeSpace' ;Expression={[math]::Round($_.FreeSpace / 1GB)}}
+                    'DiskPartitions' = $Disk.Partitions
                     'DiskModel'      = $Disk.Model
                 }
-                $DiskDriveOBJECT
+               $DiskDriveOBJECT
             }#Foreach
         }
         Catch {

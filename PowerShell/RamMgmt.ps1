@@ -13,4 +13,4 @@ $RamCIM
         Throw
     }
 }#Function
-Get-RAMSize
+# Get-RAMSize

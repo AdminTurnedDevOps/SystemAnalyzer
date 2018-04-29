@@ -37,7 +37,7 @@ def main():
     #     print("You're on a Mac")
     #     print("_______________")
     #     bash.bash()
-    elif opSys1 == 'Windows':
+    if opSys1 == 'Windows':
         print("You're on a windows machine")
         posh.powershell()
     elif opSys1 == 'Linux' or opSys1 == 'Linux2':
