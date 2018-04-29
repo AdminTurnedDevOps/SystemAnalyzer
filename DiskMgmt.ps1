@@ -1,5 +1,5 @@
 Function Get-DiskStats {
-    [cmdletbindng(ConfirmImpact = 'low')]
+    [cmdletbinding(ConfirmImpact = 'low')]
     Param (
         [Parameter(Mandatory = $true)]
         [string]$EnterComputerName = (Read-host 'Please enter a computername')
