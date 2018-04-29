@@ -9,7 +9,7 @@ Function Get-DiskStats {
 
     Process {
         Try {
-           $Disk = Get-CimInstance -ClassName Win32_LogicalDisk
+           $Disk = Get-CimInstance -ComputerName $ComputerName -ClassName Win32_LogicalDisk
            $Disk
         }
         Catch {
