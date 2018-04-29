@@ -65,3 +65,4 @@ Function GetEventLogs {
         Break           
     }
 }#Function
+GetEventLogs
