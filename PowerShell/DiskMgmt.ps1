@@ -9,6 +9,7 @@ Function Get-DiskStats {
 
     Process {
         Try {
+<<<<<<< HEAD:PowerShell/DiskMgmt.ps1
             $FreeDiskSpace = Get-CimInstance -ClassName Win32_LogicalDisk
             $DiskDrive = Get-CimInstance -ClassName Win32_DiskDrive
 
@@ -22,6 +23,10 @@ Function Get-DiskStats {
                 }
                $DiskDriveOBJECT
             }#Foreach
+=======
+           $Disk = Get-CimInstance -ComputerName $ComputerName -ClassName Win32_LogicalDisk
+           $Disk
+>>>>>>> f603fa9a355d9f40e430a92acea6481c1cc0c5c9:DiskMgmt.ps1
         }
         Catch {
             Write-Warning 'An error occured. Please review below...'
