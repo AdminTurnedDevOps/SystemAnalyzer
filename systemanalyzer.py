@@ -4,17 +4,6 @@ import nix as bash
 import powershell as posh
 
 """
-    The "Scanner" logic will go here
-
-    Check os
-
-    if os == windows
-    call PowerShell
-
-    else
-    run Bash Scripts
-
-
                  [Remove kitty before executing script]
                          ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
                        ▄▀░░░░░░░░░░░░▄░░░░░░░▀▄
@@ -32,6 +21,7 @@ import powershell as posh
 """
 
 def show_win_menu():
+    # Prints Menu for PowerShell items
     print("1. Get Event Logs")
     print("2. CPU Info")
     print("3. Disk Info")
@@ -40,6 +30,8 @@ def show_win_menu():
     print("6. Quit")
 
 def main():
+    # platform.system() returns an OS variable and stores it in op_sys
+    # Based on the value returned, the Windows or Linux loops will run
     op_sys = platform.system()
     if op_sys == 'Windows':
         while True:    

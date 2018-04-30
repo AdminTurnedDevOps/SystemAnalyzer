@@ -1,4 +1,7 @@
 import subprocess as posh
+"""
+	Functions for the different PowerShell scripts. 
+"""
     
 def get_event_logs():
 	posh.call(["C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe", "-ExecutionPolicy", "Bypass", '-Command', '. "PowerShell/GetEventLogs.ps1";', '&GetEventLogs'])
