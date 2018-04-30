@@ -1,3 +1,5 @@
+import platform
+
 import nix as bash
 import powershell as posh
 
@@ -29,19 +31,35 @@ import powershell as posh
 
 """
 
-import platform
+def show_win_menu():
+    print("1. Get Event Logs")
+    print("2. CPU Info")
+    print("3. Disk Info")
+    print("4. RAM Info")
+    print("5. Network Info")
+    print("6. Quit")
+
 def main():
-    opSys1 = platform.system()
-    # Bash commands will have mixed results on OS X. Commenting out for now.
-    # if opSys1 == 'Darwin':
-    #     print("You're on a Mac")
-    #     print("_______________")
-    #     bash.bash()
-    if opSys1 == 'Windows':
-        print("You're on a windows machine")
-        posh.powershell()
-    elif opSys1 == 'Linux' or opSys1 == 'Linux2':
-        print("You're on a linux machine")
-        print("_________________________")
+    op_sys = platform.system()
+    if op_sys == 'Windows':
+        while True:    
+            show_win_menu()
+            option = int(input("Enter menu selection: "))
+            if option == 1:
+                posh.get_event_logs()
+            elif option == 2:
+                posh.cpu_info()
+            elif option == 3:
+                posh.disk_info()
+            elif option == 4:
+                posh.ram_info()
+            elif option == 5:
+                posh.network_info()
+            elif option == 6:
+                break
+
+    elif op_sys == 'Linux' or opSys1 == 'Linux2':
         bash.bash()
+
+
 main()

@@ -50,7 +50,6 @@
 
        '8' {
            IF ($R -like [int]8) {
-               Pause
                Break
            }#If
        }#8
