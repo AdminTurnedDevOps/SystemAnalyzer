@@ -29,7 +29,6 @@ Function TCPConnectionsMgmt {
 
     elseif ($R -like 'N' -or $R -like 'No') {
         Write-Output 'Goodbye'
-        Pause
         Break
     }
 }#Function
