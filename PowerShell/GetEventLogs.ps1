@@ -56,7 +56,7 @@
        
    }#Switch
 
-   IF ($R -eq 1 -or $R -eq 2 -or $R -eq 3 -or $R -eq 4 -or $R -eq 5 -or $R -eq 6 -or $R -eq 7) {
+   IF (1..7 -contains $R) {
        & $MyInvocation.MyCommand
    }
    
