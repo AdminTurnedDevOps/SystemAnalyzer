@@ -5,7 +5,7 @@ import subprocess as s
 def disk():
     print("Disk Usage")
     print("_________________________")
-    disk = s.run(["df", "-h"])
+    
 
 
 def mem():
@@ -15,7 +15,16 @@ def mem():
 
 
 
+def os_info():
+    s.call("Bash/os.sh", shell=True)
+
+
+def network_info():
+    s.call("Bash/network.sh", shell=True)
+
+
 def bash():
     disk()
     print()
     mem()
+

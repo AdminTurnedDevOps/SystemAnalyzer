@@ -3,22 +3,7 @@ import platform
 import nix as bash
 import powershell as posh
 
-"""
-                 [Remove kitty before executing script]
-                         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-                       ▄▀░░░░░░░░░░░░▄░░░░░░░▀▄
-                       █░░▄░░░░▄░░░░░░░░░░░░░░█
-                       █░░░░░░░░░░░░▄█▄▄░░▄░░░█ ▄▄▄
-                ▄▄▄▄▄  █░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██
-                ██▄▀██▄█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██
-                 ▀██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██
-                   ▀████░▀░░░░▄░░░██░░░▄█░░░░▄░▄█░░██
-                      ▀█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██
-                      ▄█▄░░░░░░░░░░░▀▄░░▀▀▀▀▀▀▀▀░░▄▀
-                     █▀▀█████████▀▀▀▀████████████▀
-                     ████▀  ███▀      ▀███  ▀██▀
 
-"""
 
 def show_win_menu():
     # Prints Menu for PowerShell items
@@ -50,8 +35,9 @@ def main():
             elif option == 6:
                 break
 
-    elif op_sys == 'Linux' or opSys1 == 'Linux2':
-        bash.bash()
+    elif op_sys == 'Linux' or op_sys == 'Linux2':
+        bash.os_info()
+        bash.network_info()
 
 
 main()
