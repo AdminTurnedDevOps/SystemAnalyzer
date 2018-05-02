@@ -22,3 +22,11 @@ def network_info():
     s.call("Bash/network.sh", shell)
 
 
+def disk_info():
+    s.call("Bash/disk_info.sh", shell)
+
+
+def users():
+    s.call("Bash/users.sh", shell)
+
+    

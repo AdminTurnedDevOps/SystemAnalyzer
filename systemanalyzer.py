@@ -18,9 +18,9 @@ def show_nix_menu():
     # Prints Menu for Unix/Linux items
     print("1. Show OS")
     print("2. Network Info")
-    print("3. Disk Info")
-    print("4. RAM Info")
-    print("5. Network Info")
+    print("3. RAM Info")
+    print("4. Users")
+    print("5. Disk Info")
     print("6. Quit")
 
 def main():
@@ -55,9 +55,9 @@ def main():
             elif option == 3:
                 bash.memory_info()
             elif option == 4:
-                posh.ram_info()
+                bash.users()
             elif option == 5:
-                posh.network_info()
+                bash.disk_info()
             elif option == 6:
                 break
 
