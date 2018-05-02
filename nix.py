@@ -1,6 +1,7 @@
 """The module for running Bash Scripts"""
 import subprocess as s
 
+shell = True
 
 def disk():
     print("Disk Usage")
@@ -8,23 +9,16 @@ def disk():
     
 
 
-def mem():
-    print("RAM")
-    print("_________________________")
-    mem = s.run(["free", "-h"])
+def memory_info():
+    s.call("Bash/memory.sh", shell)
 
 
 
 def os_info():
-    s.call("Bash/os.sh", shell=True)
+    s.call("Bash/os.sh", shell)
 
 
 def network_info():
-    s.call("Bash/network.sh", shell=True)
+    s.call("Bash/network.sh", shell)
 
-
-def bash():
-    disk()
-    print()
-    mem()
 

@@ -14,6 +14,15 @@ def show_win_menu():
     print("5. Network Info")
     print("6. Quit")
 
+def show_nix_menu():
+    # Prints Menu for Unix/Linux items
+    print("1. Show OS")
+    print("2. Network Info")
+    print("3. Disk Info")
+    print("4. RAM Info")
+    print("5. Network Info")
+    print("6. Quit")
+
 def main():
     # platform.system() returns an OS variable and stores it in op_sys
     # Based on the value returned, the Windows or Linux loops will run
@@ -36,8 +45,20 @@ def main():
                 break
 
     elif op_sys == 'Linux' or op_sys == 'Linux2':
-        bash.os_info()
-        bash.network_info()
-
+        while True:
+            show_nix_menu()
+            option = int(input("Enter menu selection: "))
+            if option == 1:
+                bash.os_info()
+            elif option == 2:
+                bash.network_info()
+            elif option == 3:
+                bash.memory_info()
+            elif option == 4:
+                posh.ram_info()
+            elif option == 5:
+                posh.network_info()
+            elif option == 6:
+                break
 
 main()
